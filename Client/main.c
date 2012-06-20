@@ -83,6 +83,7 @@ static void chat_Room(const char *address, const char *PORT) {
                 clrscr();
             #endif
             printf("\033[01;31m NickName déja existant, ressaisissez un nouveau : \033[0m");
+            printf("\a");
         }
         else{
             #if defined(linux)
@@ -111,7 +112,7 @@ static void chat_Room(const char *address, const char *PORT) {
 
 
     char tmp[BUF_SIZE];
-    sprintf(tmp ,"zenity --info --text=\"");
+    sprintf(tmp ,"zenity --timeout=5 --info --text=\"");
 
     strncat(tmp, Buffer, BUF_SIZE - strlen(Buffer) - 1);
     strncat(tmp, "\"", BUF_SIZE - strlen(Buffer) - 1);
@@ -171,7 +172,7 @@ static void chat_Room(const char *address, const char *PORT) {
             int n = read_server(sock, Buffer);
             /* Serveur deconnecté pour une raison ou une autre */
             if(n == 0) {
-                system("zenity --warning --text=\"Le serveur s'est déconnecté !\"");
+                system("zenity --error --text=\"Le serveur s'est déconnecté !\"");
                 //printf("\033[22;31m Le serveur s'est déconnecté !\033[0m\n");
                 break;
             }

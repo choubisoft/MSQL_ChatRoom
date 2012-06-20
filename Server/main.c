@@ -221,7 +221,7 @@ static void chat_Room(int PORT) {
             * Envoyer une notification a tout les clients pour les
             * informer de l'arriver d'un nouveau chateur
             */
-            strncpy(Buffer, "\033[22;32m", BUF_SIZE - 1);
+            strncpy(Buffer, "\033[4;32m", BUF_SIZE - 1);
             strncat(Buffer, c.nickName, BUF_SIZE - strlen(Buffer) - 1);
             strncat(Buffer, " s'est connecté !\033[0m", BUF_SIZE - strlen(Buffer) - 1);
 
@@ -249,7 +249,7 @@ static void chat_Room(int PORT) {
 
                         closesocket(clients[i].sock);
                         chat_leave(clients, i, &actual);
-                        strncpy(Buffer, "\033[22;31m", BUF_SIZE - 1);
+                        strncpy(Buffer, "\033[4;31m", BUF_SIZE - 1);
                         strncat(Buffer, client.nickName, BUF_SIZE - strlen(Buffer) - 1);
                         strncat(Buffer, " s'est déconnecté !\033[0m", BUF_SIZE - strlen(Buffer) - 1);
 
@@ -337,7 +337,7 @@ static void chat(Client *clients, Client sender, int actual, const char *Buffer,
 
                 sprintf(message, "\033[01;3%dm",(rand() % 6) + 1);
                 strncat(message, sender.nickName, sizeof message - strlen(message) - 1);
-                strncat(message, " :\033[01;37m ", sizeof message - strlen(message) - 1);
+                strncat(message, " :\033[0m \033[01;37m", sizeof message - strlen(message) - 1);
             }
 
             strncat(message, Buffer, sizeof message - strlen(message) - 1);
@@ -569,9 +569,20 @@ int main(int argc, char **argv) {
     int PORT;
     char Buffer[BUF_SIZE];
 
+    char Date[256];
+    time_t timestamp = time(NULL);
+
     srand(time(NULL));
 
-    sprintf(Buffer,"Demarrage du Serveur ...");
+
+    printf("Starting MSQL_ChatRoom ( http://github.com/choubisoft/MSQL_ChatRoom ) at ");
+
+    /* Préparer la variable Date  */
+    strftime(Date, sizeof(Date), "%A %d %B %Y - %X.\n",
+             localtime(&timestamp));
+    printf("%s\n\n", Date);
+
+    sprintf(Buffer,"Starting MSQL_ChatRoom ...");
     write_log(Buffer);
 
     #if defined(linux)
