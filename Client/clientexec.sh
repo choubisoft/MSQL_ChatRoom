@@ -1,5 +1,28 @@
 #!/bin/bash
 
+# * -*- Mode: bash; -*- */
+# *
+# * clientexec.sh
+# * Copyleft (C) 2012 Chouaib BOUKHRIS <chouaibboukhris@gmail.com>
+# *                   Lamia   LAHMAM   <lahmam_lamia@hotmail.com>
+# *                   Amine   LABRIJI  <labriji73@hotmail.com>
+# *
+# * test is free software: you can redistribute it and/or modify it
+# * under the terms of the GNU General Public License as published by the
+# * Free Software Foundation, either version 3 of the License, or
+# * (at your option) any later version.
+# *
+# * test is distributed in the hope that it will be useful, but
+# * WITHOUT ANY WARRANTY; without even the implied warranty of
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# * See the GNU General Public License for more details.
+# *
+# * You should have received a copy of the GNU General Public License along
+# * with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+
 clear
 
 # Test de validité IPv4 de l'adresse entrée (expression régulière)
