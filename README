@@ -1,7 +1,3 @@
-Cette application a été developper dans le cadre d'un mini projet 
-au sein de la faculté des sciances Ben M'Sik Casablanca Maroc
-
-Devlopper avec CodeBlocks
 
 /* -*- Mode: C; -*- */
 /*
@@ -23,4 +19,22 @@ Devlopper avec CodeBlocks
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
+ *
+ *
+ *
+ *
+ *
+ * Cette application a été developper dans le cadre d'un mini projet 
+ * au sein de la faculté des sciances Ben M'Sik Casablanca Maroc
+ *
+ * Devlopper avec CodeBlocks
+ *
+ *
+ *
+ *
+ *
+ * Compiler le serveur : (Placez vous dans le répertoire /Serveur)
+ *        gcc -o server main.c
+ *
+ * Compiler le client : (Placez vous dans le répertoire /Client)
  */
