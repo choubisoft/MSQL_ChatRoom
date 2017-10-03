@@ -4,8 +4,6 @@
 # *
 # * clientexec.sh
 # * Copyleft (C) 2012 Chouaib BOUKHRIS <chouaibboukhris@gmail.com>
-# *                   Lamia   LAHMAM   <lahmam_lamia@hotmail.com>
-# *                   Amine   LABRIJI  <labriji73@hotmail.com>
 # *
 # * test is free software: you can redistribute it and/or modify it
 # * under the terms of the GNU General Public License as published by the
